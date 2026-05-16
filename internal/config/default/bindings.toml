@@ -165,6 +165,7 @@ bindings = [
     { key = "alt+s", action = "revisions.details.split_parallel", scope = "revisions.details", desc = "split parallel" },
     { key = "shift+s", action = "revisions.details.squash", scope = "revisions.details", desc = "squash" },
     { key = "r", action = "revisions.details.restore", scope = "revisions.details", desc = "restore" },
+    { key = "e", action = "revisions.details.open_editor", scope = "revisions.details", desc = "open in editor" },
     { key = "shift+a", action = "revisions.details.absorb", scope = "revisions.details", desc = "absorb" },
     { key = "*", action = "revisions.details.revisions_changing_file", scope = "revisions.details", desc = "revisions changing file" },
     { key = "p", action = "ui.preview_toggle", scope = "revisions.details", desc = "preview" },

@@ -61,3 +61,8 @@ type DetailsSelectFile struct {
 }
 
 func (DetailsSelectFile) isIntent() {}
+
+//jjui:bind scope=revisions.details action=open_editor
+type DetailsOpenEditor struct{}
+
+func (DetailsOpenEditor) isIntent() {}
