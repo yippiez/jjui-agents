@@ -272,6 +272,7 @@ function wait_refresh() end
 ---@field diff fun()
 ---@field move_down fun()
 ---@field move_up fun()
+---@field open_editor fun()
 ---@field page_down fun()
 ---@field page_up fun()
 ---@field quit fun()

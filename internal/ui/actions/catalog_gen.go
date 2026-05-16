@@ -374,6 +374,8 @@ func ResolveIntent(scope string, action keybindings.Action, args map[string]any)
 			return intents.DetailsNavigate{Delta: 1}, true
 		case keybindings.Action("revisions.details.move_up"):
 			return intents.DetailsNavigate{Delta: -1}, true
+		case keybindings.Action("revisions.details.open_editor"):
+			return intents.DetailsOpenEditor{}, true
 		case keybindings.Action("revisions.details.page_down"):
 			return intents.DetailsNavigate{Delta: 1, IsPage: true}, true
 		case keybindings.Action("revisions.details.page_up"):

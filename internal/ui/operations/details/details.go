@@ -12,6 +12,7 @@ import (
 	"charm.land/bubbles/v2/key"
 	tea "charm.land/bubbletea/v2"
 	"charm.land/lipgloss/v2"
+	"github.com/idursun/jjui/internal/config"
 	"github.com/idursun/jjui/internal/jj"
 	"github.com/idursun/jjui/internal/ui/actions"
 	"github.com/idursun/jjui/internal/ui/common"
@@ -310,6 +311,22 @@ func (s *Operation) handleIntentInner(intent intents.Intent) (tea.Cmd, bool) {
 			return tea.Batch(common.Close, common.UpdateRevSet(fmt.Sprintf("files(%s)", jj.EscapeFileName(current.fileName)))), true
 		}
 		return nil, true
+	case intents.DetailsOpenEditor:
+		selected := s.current()
+		if selected == nil {
+			return nil, true
+		}
+		editor := config.GetDefaultEditor()
+		if editor == "" {
+			return nil, true
+		}
+		fileName := selected.fileName
+		return func() tea.Msg {
+			return common.ExecMsg{
+				Line: editor + " " + fileName,
+				Mode: common.ExecShell,
+			}
+		}, true
 	case intents.DetailsSelectFile:
 		for i := range s.files {
 			if s.files[i].fileName == intent.File {

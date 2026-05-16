@@ -124,6 +124,7 @@ var builtInActionScopes = map[string][]string{
 	"revisions.details.diff":                     {"revisions.details"},
 	"revisions.details.move_down":                {"revisions.details"},
 	"revisions.details.move_up":                  {"revisions.details"},
+	"revisions.details.open_editor":              {"revisions.details"},
 	"revisions.details.page_down":                {"revisions.details"},
 	"revisions.details.page_up":                  {"revisions.details"},
 	"revisions.details.quit":                     {"revisions.details"},
