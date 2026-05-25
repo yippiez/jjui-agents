@@ -28,6 +28,19 @@ type Config struct {
 	Limit           int             `toml:"limit"`
 	Git             GitConfig       `toml:"git"`
 	Ssh             SshConfig       `toml:"ssh"`
+	Agent           AgentConfig     `toml:"agent"`
+}
+
+type AgentConfig struct {
+	Enabled  bool           `toml:"enabled"`
+	Default  string         `toml:"default"`
+	Backends []AgentBackend `toml:"backends"`
+}
+
+type AgentBackend struct {
+	Name    string            `toml:"name"`
+	Command []string          `toml:"command"`
+	Env     map[string]string `toml:"env"`
 }
 
 type Color struct {
