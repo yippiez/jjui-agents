@@ -39,6 +39,16 @@ bindings_profile = ":builtin"
 [ssh]
   hijack_askpass = false
 
+[agent]
+  enabled = false
+  default = ""
+  # [[agent.backends]]
+  # name = "cursor"
+  # command = ["npx", "-y", "cursor-agent-acp"]
+  # [[agent.backends]]
+  # name = "pi"
+  # command = ["npx", "-y", "pi-acp"]
+
 # Backwards compatibility
 [[actions]]
 name = "revisions.toggle_select"
